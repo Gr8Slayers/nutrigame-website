@@ -32,4 +32,64 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(el => {
         appearOnScroll.observe(el);
     });
+
+    // Gallery Slider Logic
+    const track = document.getElementById('sliderTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicatorContainer = document.getElementById('sliderIndicators');
+    const slides = Array.from(track.children);
+    
+    let currentIndex = 0;
+
+    // Create Indicators
+    slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('indicator');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        indicatorContainer.appendChild(dot);
+    });
+
+    const indicators = Array.from(indicatorContainer.children);
+
+    const updateSlider = () => {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        indicators.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    };
+
+    const goToSlide = (index) => {
+        currentIndex = index;
+        updateSlider();
+    };
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+    });
+
+    // Optional: Auto-slide
+    let autoSlide = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+    }, 5000);
+
+    const resetTimer = () => {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        }, 5000);
+    };
+
+    [prevBtn, nextBtn, indicatorContainer].forEach(el => {
+        el.addEventListener('click', resetTimer);
+    });
 });

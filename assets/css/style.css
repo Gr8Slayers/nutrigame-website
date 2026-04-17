@@ -1,13 +1,13 @@
 /* base resets */
 :root {
-    --bg-color: #0b0f19;
-    --text-color: #e2e8f0;
-    --heading-color: #ffffff;
+    --bg-color: #f8fafc;
+    --text-color: #334155;
+    --heading-color: #0f172a;
     --primary: #10b981; /* Emerald/Neon green */
     --primary-hover: #059669;
     --secondary: #6366f1; /* Indigo */
-    --surface: rgba(255, 255, 255, 0.03);
-    --surface-border: rgba(255, 255, 255, 0.1);
+    --surface: rgba(255, 255, 255, 0.7);
+    --surface-border: rgba(0, 0, 0, 0.08);
     
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -123,7 +123,7 @@ a {
 
 .navbar.scrolled {
     padding: 1rem 0;
-    background: rgba(11, 15, 25, 0.8);
+    background: rgba(248, 250, 252, 0.85);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--surface-border);
 }
@@ -257,14 +257,14 @@ a {
     font-size: 4.5rem;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: #cbd5e1;
+    color: #475569;
     margin-bottom: 2.5rem;
     max-width: 600px;
 }
@@ -306,7 +306,7 @@ a {
 .team-img-wrapper {
     width: 100%;
     aspect-ratio: 1;
-    background: rgba(255,255,255,0.05);
+    background: rgba(0,0,0,0.03);
     position: relative;
     overflow: hidden;
 }
@@ -363,7 +363,7 @@ a {
 .group-photo-wrapper {
     width: 100%;
     aspect-ratio: 21/9;
-    background: rgba(255,255,255,0.05);
+    background: rgba(0,0,0,0.03);
     border-radius: 16px;
     overflow: hidden;
     position: relative;
@@ -387,7 +387,7 @@ a {
 
 .team-bio-text p {
     font-size: 1.15rem;
-    color: #cbd5e1;
+    color: #475569;
     line-height: 1.8;
 }
 
@@ -423,7 +423,7 @@ a {
 
 /* Documents Section */
 .documents {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.03);
 }
 
 .docs-list {
@@ -456,7 +456,7 @@ a {
 
 .doc-details p {
     font-size: 0.9rem;
-    color: #94a3b8;
+    color: #475569;
     margin-top: 0.2rem;
 }
 
@@ -491,7 +491,7 @@ a {
 .gallery-placeholder {
     width: 100%;
     height: 100%;
-    background: rgba(255,255,255,0.02);
+    background: rgba(0,0,0,0.03);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -540,7 +540,7 @@ a {
 footer {
     padding: 3rem 0;
     border-top: 1px solid var(--surface-border);
-    background: #020617;
+    background: #f1f5f9;
 }
 
 .footer-content {
